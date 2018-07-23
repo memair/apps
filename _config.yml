@@ -1,7 +1,8 @@
 name: Memair Apps
+title: Apps | Memair
 markdown: kramdown
 highlighter: rouge
 pygments: true
-permalink: /:year/:month/:title/
+permalink: pretty
 url: https://apps.memair.com
-google_analytics_key: UA-122747376-2
+google_analytics_key: UA-122747376-2]
