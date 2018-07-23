@@ -1,0 +1,5 @@
+name: Memair Apps
+markdown: kramdown
+pygments: true
+permalink: /:year/:month/:title/
+url: https://apps.memair.com
