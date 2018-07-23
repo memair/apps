@@ -1,4 +1,4 @@
-Memair App Listings
+WIP Memair App Store
 =========
 
-Cominng Soon...
+Coming Soon...
