@@ -1,5 +1,6 @@
 name: Memair Apps
 markdown: kramdown
+highlighter: rouge
 pygments: true
 permalink: /:year/:month/:title/
 url: https://apps.memair.com
