@@ -12,6 +12,18 @@
     <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/component.css" />
     <script src="{{ site.url }}/js/modernizr.custom.js"></script>
+
+    {% if jekyll.environment == 'production' %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_key }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ site.google_analytics_key }}');
+      </script>
+    {% endif %}
   </head>
   <body>
 
