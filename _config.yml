@@ -5,4 +5,8 @@ highlighter: rouge
 pygments: true
 permalink: pretty
 url: https://apps.memair.com
-google_analytics_key: UA-122747376-2]
+google_analytics_key: UA-122747376-2
+
+collections:
+  apps:
+    output: true

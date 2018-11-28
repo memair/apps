@@ -10,13 +10,15 @@ layout: default
 	<section class="grid-wrap">
 	<ul class="grid">
 		<li class="grid-sizer"></li><!-- for Masonry column width -->
-		{% for post in site.posts %}
+		{% for app in site.apps %}
 		<li>
 			<figure>
-				<img src="{{ site.url }}/img/thumb/{{ post.photo }}" alt="img"/>
+				<center>
+					<div class="logo-thumb"><img src="{{ site.url }}/img/app_logos/{{ app.logo }}"></div>
+				<center>
 				<figcaption>
-					<h3>{{ post.caption_header}}</h3>
-					<p>{{ post.caption }}</p>
+					<h3>{{ app.title}}</h3>
+					<p>{{ app.subtitle }}</p>
 				</figcaption>
 			</figure>
 		</li>
@@ -26,11 +28,21 @@ layout: default
 
 	<section class="slideshow">
 	<ul>
-		{% for post in site.posts %}
+		{% for app in site.apps %}
 		<li>
 			<figure>
-				<img src="{{ site.url }}/img/large/{{ post.photo }}" alt="img"/>
-				<figcaption><h3>{{ post.caption_header}}</h3><p>{{ post.caption }}</p></figcaption>
+				<center>
+					<div class="logo"><img src="{{ site.url }}/img/app_logos/{{ app.logo }}"></div>
+				<center>
+				<figcaption>
+					<h3>{{ app.title}}</h3>
+					<p>{{ app.description }}</p>
+					{% if app.status == 'alpha' %}
+						<input type="button" class="install disabled" value="Coming soon..." />
+					{% else %}
+						<input type="button" class="install" onclick="location.href='{{ app.install_link}}';" value="Install" />
+					{% endif %}
+				</figcaption>
 			</figure>
 		</li>
 		{% endfor %}
