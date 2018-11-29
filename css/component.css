@@ -206,14 +206,17 @@
 
 span.nav-prev:before {
 	content: "\e601";
+	color: #666;
 }
 
 span.nav-next:before  {
 	content: "\e600";
+	color: #666;
 }
 
 span.nav-close:before {
 	content: "\e602";
+	color: #666;
 }
 
 /* Info on arrow key navigation */
