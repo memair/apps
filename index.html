@@ -37,10 +37,12 @@ layout: default
 				<figcaption>
 					<h3>{{ app.title}}</h3>
 					<p>{{ app.description }}</p>
-					{% if app.status == 'alpha' %}
-						<input type="button" class="install disabled" value="Coming soon..." />
-					{% else %}
+					{% if app.install_link %}
 						<input type="button" class="install" onclick="location.href='{{ app.install_link}}';" value="Install" />
+					{% elsif app.visit_link %}
+						<input type="button" class="install" onclick="location.href='{{ app.visit_link}}';" value="Visit" />
+					{% else %}
+						<input type="button" class="install disabled" value="Coming soon..." />
 					{% endif %}
 				</figcaption>
 			</figure>

@@ -216,7 +216,7 @@ span.nav-next:before  {
 
 span.nav-close:before {
 	content: "\e602";
-	color: #666;
+	color: #222;
 }
 
 /* Info on arrow key navigation */
