@@ -37,7 +37,9 @@ layout: default
 				<figcaption>
 					<h3>{{ app.title}}</h3>
 					<p>{{ app.description }}</p>
-					{% if app.install_link %}
+					{% if app.beta_install_link %}
+						<input type="button" class="install beta" onclick="location.href='{{ app.beta_install_link}}';" value="Install Beta" />
+					{% elsif app.install_link %}
 						<input type="button" class="install" onclick="location.href='{{ app.install_link}}';" value="Install" />
 					{% elsif app.visit_link %}
 						<input type="button" class="install" onclick="location.href='{{ app.visit_link}}';" value="Visit" />
