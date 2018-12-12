@@ -61,3 +61,12 @@ layout: default
 
 	</div><!-- // grid-gallery -->
 </div>
+
+<!-- Wakes up apps that hibernate, basically I'm cheap and using heroku free instances for simple apps -->
+{% for app in site.apps %}
+	{% if app.wake_up_link %}
+		<script>
+			fetch('https://cors.io/?{{ app.wake_up_link}}');
+		</script>
+	{% endif %}
+{% endfor %}
