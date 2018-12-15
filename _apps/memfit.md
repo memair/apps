@@ -1,6 +1,6 @@
 ---
 layout: default
-logo: memfit.png
+logo: memfit.jpg
 status: beta
 title: Memfit
 subtitle: Google Fit + Memair
