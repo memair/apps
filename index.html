@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign shuffled_apps = site.apps | shuffle %}
+
 <div class="container">
 	<header class="clearfix">
 		<h1><img src="{{ site.url }}/img/memair_logo.png" alt="memair logo" width="75"/> {{ site.name }}</h1>
@@ -10,7 +12,7 @@ layout: default
 	<section class="grid-wrap">
 	<ul class="grid">
 		<li class="grid-sizer"></li><!-- for Masonry column width -->
-		{% for app in site.apps %}
+		{% for app in shuffled_apps %}
 		<li>
 			<figure>
 				<center>
@@ -28,7 +30,7 @@ layout: default
 
 	<section class="slideshow">
 	<ul>
-		{% for app in site.apps %}
+		{% for app in shuffled_apps %}
 		<li>
 			<figure>
 				<center>
