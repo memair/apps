@@ -1,74 +1,60 @@
----
-layout: default
----
-{% assign shuffled_apps = site.apps | shuffle %}
-
-<div class="container">
-	<header class="clearfix">
-		<h1><img src="{{ site.url }}/img/memair_logo.png" alt="memair logo" width="75"/> {{ site.name }}</h1>
-	</header>
-	<div id="grid-gallery" class="grid-gallery">
-
-	<section class="grid-wrap">
-	<ul class="grid">
-		<li class="grid-sizer"></li><!-- for Masonry column width -->
-		{% for app in shuffled_apps %}
-		<li>
-			<figure>
-				<center>
-					<div class="logo-thumb"><img src="{{ site.url }}/img/app_logos/{{ app.logo }}"></div>
-				<center>
-				<figcaption>
-					<h3>{{ app.title}}</h3>
-					<p>{{ app.subtitle }}</p>
-				</figcaption>
-			</figure>
-		</li>
-		{% endfor %}
-	</ul>
-	</section><!-- // grid-wrap -->
-
-	<section class="slideshow">
-	<ul>
-		{% for app in shuffled_apps %}
-		<li>
-			<figure>
-				<center>
-					<div class="logo"><img src="{{ site.url }}/img/app_logos/{{ app.logo }}"></div>
-				<center>
-				<figcaption>
-					<h3>{{ app.title}}</h3>
-					<p>{{ app.description }}</p>
-					{% if app.beta_install_link %}
-						<input type="button" class="install beta" onclick="location.href='{{ app.beta_install_link}}';" value="Install Beta" />
-					{% elsif app.install_link %}
-						<input type="button" class="install" onclick="location.href='{{ app.install_link}}';" value="Install" />
-					{% elsif app.visit_link %}
-						<input type="button" class="install" onclick="location.href='{{ app.visit_link}}';" value="Visit" />
-					{% else %}
-						<input type="button" class="install disabled" value="Coming soon..." />
-					{% endif %}
-				</figcaption>
-			</figure>
-		</li>
-		{% endfor %}
-	</ul>
-	<nav>
-		<span class="icon nav-prev"></span>
-		<span class="icon nav-next"></span>
-		<span class="icon nav-close"></span>
-	</nav>
-	<div class="info-keys icon">Navigate with arrow keys</div>
-	</section><!-- // slideshow -->
-
-	</div><!-- // grid-gallery -->
-</div>
-
-<!-- Wakes up apps that hibernate, basically I'm cheap and using heroku free instances for simple apps -->
-{% for app in site.apps %}
-	{% if app.wake_up_link %}
-		<script>
-			fetch('https://cors.io/?{{ app.wake_up_link}}');
-		</script>
-	{% endif %}
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apps | Memair</title>
+    <meta name="description" content="The Memair app directory is closed for now. Apps can still connect to Memair through its API.">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #1f2328;
+        --muted: #59636e;
+        --link: #0969da;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0d1117;
+          --text: #e6edf3;
+          --muted: #9198a1;
+          --link: #4493f8;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      }
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        margin: 1.5rem 0 1rem;
+      }
+      p {
+        margin: 0 0 1rem;
+      }
+      a {
+        color: var(--link);
+      }
+      .muted {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="https://memair.com"><img src="/img/memair_logo.png" alt="Memair" width="75"></a>
+      <h1>The Memair app directory is closed for now</h1>
+      <p>Apps can still connect to Memair. They ask the user for access through OAuth and read and write data through the GraphQL API.</p>
+      <p>The <a href="https://docs.memair.com">developer docs</a> explain how to register an app and use the API.</p>
+      <p class="muted">Back to <a href="https://memair.com">memair.com</a>.</p>
+    </main>
+  </body>
+</html>
